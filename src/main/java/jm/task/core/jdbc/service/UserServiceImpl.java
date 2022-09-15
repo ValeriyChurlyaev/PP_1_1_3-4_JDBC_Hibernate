@@ -14,16 +14,15 @@ public class UserServiceImpl implements UserService {
 
 
     public void createUsersTable() {
-    userDaoJDBC.createUsersTable();
+        userDaoJDBC.createUsersTable();
     }
 
     public void dropUsersTable() {
-    userDaoJDBC.dropUsersTable();
+        userDaoJDBC.dropUsersTable();
     }
 
     public void saveUser(String name, String lastName, byte age) {
         userDaoJDBC.saveUser(name, lastName, age);
-        System.out.println("User с именем - " + name + " добавлен в базу данных");
     }
 
     public void removeUserById(long id) {
@@ -31,11 +30,7 @@ public class UserServiceImpl implements UserService {
     }
 
     public List<User> getAllUsers() {
-        List<User> users = userDaoJDBC.getAllUsers();
-        for (User u : users) {
-            System.out.println(u);
-        }
-        return users;
+        return userDaoJDBC.getAllUsers();
     }
 
     public void cleanUsersTable() {
