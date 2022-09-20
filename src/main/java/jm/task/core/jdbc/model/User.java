@@ -3,7 +3,7 @@ package jm.task.core.jdbc.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "user")
+@Table(name = "users")
 public class User {
     @Id
     @Column(name = "id")
@@ -13,7 +13,7 @@ public class User {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "lastname")
+    @Column(name = "last_name")
     private String lastName;
 
     @Column(name = "age")
