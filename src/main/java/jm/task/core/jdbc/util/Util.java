@@ -13,6 +13,22 @@ import java.util.Properties;
 
 public class Util {
 
+    private static volatile Util INSTANCE = null;
+
+    private Util() {
+    }
+
+    public static Util getInstance() {
+        if (INSTANCE == null) {
+            synchronized (Util.class) {
+                if (INSTANCE == null) {
+                    INSTANCE = new Util();
+                }
+            }
+        }
+        return INSTANCE;
+    }
+
     private static final String URL = "jdbc:mysql://localhost:3306/mydbtest";
     private static final String USERNAME = "root";
     private static final String PASSWORD = "root";
