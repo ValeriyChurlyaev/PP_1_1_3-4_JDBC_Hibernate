@@ -10,7 +10,8 @@ import javax.persistence.Query;
 import java.util.List;
 
 public class UserDaoHibernateImpl implements UserDao {
-    private final SessionFactory sessionFactory = Util.getSessionFactory();
+    private final Util util = Util.getInstance();
+    private final SessionFactory sessionFactory = util.getSessionFactory();
 
 
     public UserDaoHibernateImpl() {
